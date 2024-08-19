@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+.grid-container {
+    display: grid;
+}
+  
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+  
+  /* NAVIGATION BAR */
+  
+header {
+    height: 5vw;
+}
+  
+nav {
+    display: flex;
+    justify-content: center;
+    height: 5vw;
+    position: fixed;
+    gap: 3vw;
+    align-items: center;
+    background-color: #000000;
+    border-bottom: solid 0.1vw #ffffff;
+    width: 100%;
+}
+  
+.logo {
+    height: 3.9vw;
+}
+  
+.nav-links {
+    list-style-type: none;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    gap: 1vw;
+}
+  
+.contact {
+    border: solid 0.1vw #ffffff;
+}
+  
+.nav-links li {
+    margin: 0 1.5vw;
+}
+  
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Roboto Mono", monospace;
+    transition: background-color 0.3s;
+    font-size: 1.3em;
+    font-weight: 400;
+    padding: 0.5vw 1.2vw;
+}
+  
+.nav-links li a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+/* LOADING PAGE */
+
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 2;
+    display: flex;
+    overflow: hidden;
+}
+
+.loading img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+
+#smiley1 {
+    z-index: 3;
+    animation: loadingB 650ms steps(1) 650ms 1 forwards;
+}
+  
+#smiley2 {
+    z-index: 4;
+    opacity: 0;
+    animation: loadingA 650ms steps(1) 1300ms 1 forwards, loadingB 650ms steps(1) 1950ms 1 forwards;
+}
+  
+#smiley3 {
+    z-index: 5;
+    opacity: 0;
+    animation: loadingA 650ms steps(1) 2600ms 1 forwards, loadingB 650ms steps(1) 3250ms 1 forwards;
+}
+  
+#smiley4 {
+    z-index: 6;
+    opacity: 0;
+    animation: loadingA 650ms steps(1) 3900ms 1 forwards, loadingB 650ms steps(1) 4550ms 1 forwards;
+}
+
+@keyframes loadingA {
+    0% { opacity: 0; }
+    50% {opacity: 1;}
+    100% { opacity: 1; }
+  }
+  
+  @keyframes loadingB {
+    0% { opacity: 1; }
+    50% {opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+#preloader {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+    transition: visibility 0.5s ease;
+}
+  
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

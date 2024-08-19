@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+.grid-container {
+  display: grid;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #FFF5D8;
+}
+
+h1 {
+  font-family: "Acme", system-ui;
+  font-weight: 400;
+  font-size: 4em;
+}
+
+p {
+  font-family: "Roboto", system-ui;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
+/* NAVIGATION BAR */
+
+header {
+  height: 5vw;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  height: 5vw;
+  position: fixed;
+  gap: 3vw;
+  align-items: center;
+  background-color: #FFF5D8;
+  border-bottom: solid 0.1vw #383838;
+  width: 100%;
+}
+
+.logo {
+  height: 4.5vw;
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 1vw;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  gap: 1vw;
+}
+
+.contact {
+  border: solid 0.1vw #383838;
+}
+
+.nav-links li {
+  margin: 0 1.5vw;
+}
+
+.nav-links li a {
+  color: #383838;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  transition: background-color 0.3s;
+  font-size: 1.3em;
+  font-weight: 400;
+  padding: 0.5vw 1.2vw;
+}
+
+.nav-links li a:hover {
+  background-color: #575757;
+}
+  
+
+
+/* LOADING PAGE */
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF5D8;
+  z-index: 2;
+  display: flex;
+}
+
+.loadingP {
+  font-family: "Roboto Mono", monospace;
+  font-size: 8em;
+}
+
+/* animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+
+#eng {
+  position: absolute;
+  margin-top: 7vh;
+  margin-left: 5vw;
+  animation: loadingB 400ms steps(1) 400ms 1 forwards;
+}
+
+#viet {
+  position: absolute;
+  margin-top: 65vh;
+  margin-left: 15vw;
+  opacity: 0;
+  animation: loadingA 400ms steps(1) 800ms 1 forwards, loadingB 400ms steps(1) 1200ms 1 forwards;
+}
+
+#russian {
+  position: absolute;
+  margin-top: 40vh;
+  margin-left: 60vw;
+  opacity: 0;
+  animation: loadingA 400ms steps(1) 1600ms 1 forwards, loadingB 400ms steps(1) 2000ms 1 forwards;
+}
+
+#hi {
+  position: absolute;
+  margin-top: 30vh;
+  margin-left: 20vw;
+  opacity: 0;
+  animation: loadingA 400ms steps(1) 2400ms 1 forwards, loadingB 400ms steps(1) 2800ms 1 forwards;
+}
+
+#im {
+  position: absolute;
+  margin-top: 30vh;
+  margin-left: 40vw;
+  opacity: 0;
+  animation: loadingA 400ms steps(1) 3200ms 1 forwards, loadingB 400ms steps(1) 3600ms 1 forwards;
+}
+
+#vyyy {
+  position: absolute;
+  margin-top: 30vh;
+  margin-left: 60vw;
+  opacity: 0;
+  animation: loadingA 400ms steps(1) 4000ms 1, loadingB 400ms steps(1) 4400ms 1 forwards;
+}
+
+@keyframes loadingA {
+  0% { opacity: 0; }
+  50% {opacity: 1;}
+  100% { opacity: 1; }
+}
+
+@keyframes loadingB {
+  0% { opacity: 1; }
+  50% {opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#preloader {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* LANDING PAGE */
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  background-color: #BCE6F7;
+}
+
+#LandingTitle {
+  font-family: "Acme", sans-serif;
+  font-weight: 400;
+  font-size: 6em;
+  padding-top: 2vw;
+  text-align: center;
+  color: #FFFDF5;
+}
+
+.folder {
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+
+/* FOLDER PAGE */
+
+
+
+
+/* CONTACT PAGE */
+
+#contactT {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5vh;
+  color: #383838;
+}
+
+#contactP {
+  margin-top: 5vh;
+  text-align: center;
+  color: #383838;
+}
+
+form {
+  background-color: #FFF5D8;
+  padding: 2vw;
+  max-width: 85vw;
+  margin: 6vh auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 1vw;
+  font-family: "Roboto", system-ui;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #383838;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="message"],
+textarea {
+  width: 100%;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  border: 0.05vw solid #383838;
+  border-radius: 0.5vw;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  padding: 0.8vw 1.6vw;
+  border: none;
+  border-radius: 0.7vw;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Roboto", system-ui;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+#formResponse {
+  margin-top: 5vh;
+  font-size: 1.2em;
+  color: #28a745;
+}
+
+
+
+/* FOOTER */
+
+footer {
+  border-top: solid 0.1vw #383838;
+  padding: 3vh 3vw;
+}
